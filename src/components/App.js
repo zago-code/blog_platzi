@@ -1,54 +1,63 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const App = () => {
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      usuarios:[
+        {
+          nombre: 'Gabriel',
+          correo: 'gabriel@zarate.com',
+          enlace: 'gabriel.com'
+        },
+        {
+          nombre: 'Platzi',
+          correo: 'platzi@platzi.com',
+          enlace: 'platzi.com'
+        }
+      ]
+    }
+  }
+  ponerFilas = () => (
+    this.state.usuarios.map((usuario) => (
+      <tr>
+        <td>
+          { usuario.nombre }
+        </td>
+        <td>
+          { usuario.correo }
+        </td>
+        <td>
+          { usuario.enlace }
+        </td>
+      </tr>
+    ))
+  );
 
-  const ponerFilas = () => [
-    <tr>
-      <td>
-        Gabriel
-      </td>
-      <td>
-        gabriel@zarate.com
-      </td>
-      <td>
-        gabriel.com
-      </td>
-    </tr>,
-    <tr>
-      <td>
-        Platzi
-      </td>
-      <td>
-        platzi@platzi.com
-      </td>
-      <td>
-        platzi.com
-      </td>
-    </tr>
-  ];
-
-  return(
-    <div className="margen">
-      <table className="tabla">
-        <thead>
-          <tr>
-            <th>
-              Nombre
-            </th>
-            <th>
-              Correo
-            </th>
-            <th>
-              Enlace
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {ponerFilas()}
-        </tbody>
-      </table>
-    </div>
-  )
+  render() {
+    return(
+      <div className="margen">
+        <table className="tabla">
+          <thead>
+            <tr>
+              <th>
+                Nombre
+              </th>
+              <th>
+                Correo
+              </th>
+              <th>
+                Enlace
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.ponerFilas()}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
 }
 
 export default App;
