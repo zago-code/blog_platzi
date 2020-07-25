@@ -1,74 +1,18 @@
-import React, { Component } from 'react'
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Menu from './menu'
+import Usuarios from '../components/usuarios/index';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      usuarios: [],
-    }
-  }
+const Tareas = () => <div>Tareas</div>
 
-  async componentDidMount() {
-    const respuesta = await axios.get('https://jsonplaceholder.typicode.com/users');
-    console.log(respuesta);
-    this.setState({
-      usuarios: [
-        {
-          nombre: 'Gabriel',
-          correo: 'gabriel@zarate.com',
-          enlace: 'gabriel.com'
-        },
-        {
-          nombre: 'Platzi',
-          correo: 'platzi@platzi.com',
-          enlace: 'platzi.com'
-        }
-      ]
-    })
-  }
-
-  ponerFilas = () => (
-    this.state.usuarios.map((usuario) => (
-      <tr>
-        <td>
-          { usuario.nombre }
-        </td>
-        <td>
-          { usuario.correo }
-        </td>
-        <td>
-          { usuario.enlace }
-        </td>
-      </tr>
-    ))
-  );
-
-  render() {
-    console.log(this.state.usuarios);
-    return(
-      <div className="margen">
-        <table className="tabla">
-          <thead>
-            <tr>
-              <th>
-                Nombre
-              </th>
-              <th>
-                Correo
-              </th>
-              <th>
-                Enlace
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.ponerFilas()}
-          </tbody>
-        </table>
-      </div>
-    )
-  }
-}
+const App = () => (
+  <BrowserRouter>
+    <Menu />
+    <Switch>
+      <Route exact path='/' component={Usuarios} />
+      <Route exact path='/tareas' component={Tareas} />
+    </Switch>
+  </BrowserRouter>
+);
 
 export default App;
