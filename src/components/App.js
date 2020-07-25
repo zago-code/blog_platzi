@@ -8,10 +8,12 @@ const Tareas = () => <div>Tareas</div>
 const App = () => (
   <BrowserRouter>
     <Menu />
-    <Switch>
-      <Route exact path='/' component={Usuarios} />
-      <Route exact path='/tareas' component={Tareas} />
-    </Switch>
+    <div className="margen">
+      <Switch>
+        <Route exact path='/' component={Usuarios} />
+        <Route exact path='/tareas' component={Tareas} />
+      </Switch>
+    </div>
   </BrowserRouter>
 );
 

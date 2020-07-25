@@ -36,7 +36,7 @@ class Usuarios extends Component {
   render() {
     console.log(this.state.usuarios);
     return(
-      <div className="margen">
+      <>
         <table className="tabla">
           <thead>
             <tr>
@@ -55,7 +55,7 @@ class Usuarios extends Component {
             {this.ponerFilas()}
           </tbody>
         </table>
-      </div>
+      </>
     )
   }
 }
