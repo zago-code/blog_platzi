@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  /* background-color: #416475;
+  margin-bottom: 50px; */
 }
 .margen {
   margin: 100px;
@@ -24,4 +26,12 @@ body {
 #menu a {
   color: white;
   padding-right: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+.rojo {
+  color: red;
 }

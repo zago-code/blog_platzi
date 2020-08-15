@@ -2,7 +2,7 @@ import { TRAER_TODOS, CARGANDO, ERROR } from '../types/usuariosTypes';
 const INITIAL_STATE = {
   usuarios: [],
   cargando: false,
-  error: ''
+  error: '',
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -10,9 +10,8 @@ export default (state = INITIAL_STATE, action) => {
     case TRAER_TODOS:
       return {
         ...state,
-        usuarios:
-        action.payload,
-        cargando: false
+        usuarios: action.payload,
+        cargando: false,
       };
 
     case CARGANDO:
@@ -22,7 +21,7 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         error: action.payload,
-        cargando: false
+        cargando: false,
       };
 
     default:
