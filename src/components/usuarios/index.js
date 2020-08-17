@@ -15,9 +15,10 @@ class Usuarios extends Component {
       return <Spinner />;
     }
     if (this.props.error) {
-      return <Fatal mensaje={ this.props.error } />;
+      return <Fatal mensaje={this.props.error} />;
     }
-    return <Tabla usuarios={ this.props.usuarios } />
+    return <Tabla />
+    // return <Tabla usuarios={this.props.usuarios} />;
   };
 
   render() {

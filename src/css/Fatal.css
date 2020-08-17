@@ -122,12 +122,16 @@
 body {
   background-color: #416475;
   margin-bottom: 50px;
-}
-html, button, input, select, textarea {
+} */
+button, input, select, textarea {
     font-family: 'Montserrat', Helvetica, sans-serif;
     color: #92a4ad;
-} */
-h1 {
+}
+.fondo {
+  background-color: #416475;
+}
+.fondo h1 {
+  font-family: 'Montserrat', Helvetica, sans-serif;
   text-align: center;
   margin: 30px 15px;
 }
@@ -136,6 +140,9 @@ h1 {
   margin: 30px auto 30px;
   font-size: 19px;
   text-align: center;
+}
+.zoom-area b {
+  font-family: 'Montserrat', Helvetica, sans-serif;
 }
 .link-container {
   text-align: center;

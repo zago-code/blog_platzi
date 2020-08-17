@@ -2,10 +2,10 @@ import React from 'react';
 import '../../css/Fatal.css';
 
 const fatal = props => (
-  <div className='center'>
+  <div className='fondo'>
     <h1>404 Error Page</h1>
     <p className='zoom-area'>
-      <b>CSS</b> {props.mensaje}{' '}
+      <b>Fail</b> {props.mensaje}{' '}
     </p>
     <section className='error-container'>
       <span>4</span>
