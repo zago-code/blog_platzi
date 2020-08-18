@@ -5,7 +5,7 @@ const fatal = props => (
   <div className='fondo'>
     <h1>404 Error Page</h1>
     <p className='zoom-area'>
-      <b>Fail</b> {props.mensaje}{' '}
+      <b>FAIL!:</b> {' '}{props.mensaje.toUpperCase()}
     </p>
     <section className='error-container'>
       <span>4</span>
