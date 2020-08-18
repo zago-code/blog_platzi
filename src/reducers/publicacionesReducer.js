@@ -1,15 +1,24 @@
-import { ACTUALIZAR, CARGANDO, ERROR } from '../types/publicacionesTypes';
+import {
+  ACTUALIZAR,
+  CARGANDO,
+  ERROR,
+  COMENTARIOS_ACTUALIZAR,
+  COMENTARIOS_CARGANDO,
+  COMENTARIOS_ERROR
+} from '../types/publicacionesTypes';
 
 const INITIAL_STATE = {
   publicaciones: [],
   cargando: false,
   error: '',
+  comentarios_cargando: false,
+  comentarios_error: '',
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ACTUALIZAR:
-			return { 
+			return {
         ...state,
         publicaciones: action.payload,
         cargando: false,
@@ -22,6 +31,21 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         error: action.payload,
         cargando: false
+      }
+    case COMENTARIOS_ACTUALIZAR:
+      return {
+        ...state,
+        publicaciones: action.payload,
+        comentarios_cargando: false,
+        comentarios_error: ''
+      };
+    case COMENTARIOS_CARGANDO:
+      return {  ...state, comentarios_cargando: true };
+    case COMENTARIOS_ERROR:
+      return {
+        ...state,
+        comentarios_error: action.payload,
+        comentarios_cargando: false
       }
     default: return state;
   }
